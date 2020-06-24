@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Android.App;
+﻿using Android.App;
 using Android.OS;
-using Android.Runtime;
-using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using SimpleLangCard.Core.Cards;
+using SimpleLangCard.Data;
 
 namespace SimpleLangCard
 {
@@ -23,7 +19,7 @@ namespace SimpleLangCard
 
         public MainActivity()
         {
-            _cardManager = new CardManager();
+            _cardManager = new CardManager(new CardRepository());
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -34,12 +30,15 @@ namespace SimpleLangCard
 
             _cardPool = _cardManager.GetCardPool();
 
-            _cardPool.Shuffle();
+            if (_cardPool.HasCards())
+            {
+                _cardPool.Shuffle();
 
-            SetCard(_cardPool.NextCard());
+                SetCard(_cardPool.NextCard());
 
-            ShowButton.Click += (obj, e) => ShowTranslation();
-            NextButton.Click += (obj, e) => NextCard();
+                ShowButton.Click += (obj, e) => ShowTranslation();
+                NextButton.Click += (obj, e) => NextCard();
+            }
         }
 
 

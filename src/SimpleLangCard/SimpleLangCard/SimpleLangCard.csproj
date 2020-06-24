@@ -115,6 +115,10 @@
       <Project>{F6964112-25EA-4D9E-A207-6E694F11B41E}</Project>
       <Name>SimpleLangCard.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SimpleLangCard.Data\SimpleLangCard.Data.csproj">
+      <Project>{1EE9ACD7-A915-4D84-88EE-DA7784BEB13C}</Project>
+      <Name>SimpleLangCard.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

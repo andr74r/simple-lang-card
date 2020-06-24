@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLangCard", "SimpleLangCard\SimpleLangCard.csproj", "{E6F75C17-4297-41AD-8BC0-3BFBD65D9E2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLangCard.Core", "SimpleLangCard.Core\SimpleLangCard.Core.csproj", "{F6964112-25EA-4D9E-A207-6E694F11B41E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleLangCard.Core", "SimpleLangCard.Core\SimpleLangCard.Core.csproj", "{F6964112-25EA-4D9E-A207-6E694F11B41E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLangCard.Data", "SimpleLangCard.Data\SimpleLangCard.Data.csproj", "{1EE9ACD7-A915-4D84-88EE-DA7784BEB13C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{F6964112-25EA-4D9E-A207-6E694F11B41E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6964112-25EA-4D9E-A207-6E694F11B41E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6964112-25EA-4D9E-A207-6E694F11B41E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EE9ACD7-A915-4D84-88EE-DA7784BEB13C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EE9ACD7-A915-4D84-88EE-DA7784BEB13C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EE9ACD7-A915-4D84-88EE-DA7784BEB13C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EE9ACD7-A915-4D84-88EE-DA7784BEB13C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

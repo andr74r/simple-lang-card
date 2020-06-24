@@ -9,8 +9,13 @@
         public string Translation { get; private set; }
 
         public Card(int id, string original, string translation)
+            : this(original, translation)
         {
             Id = id;
+        }
+
+        public Card(string original, string translation)
+        {
             Original = original;
             Translation = translation;
         }
