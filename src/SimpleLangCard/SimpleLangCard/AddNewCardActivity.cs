@@ -10,7 +10,7 @@ namespace SimpleLangCard
     [Activity(
         Label = "@string/app_name",
         Theme = "@style/AppTheme.NoActionBar",
-        MainLauncher = true)]
+        MainLauncher = false)]
     class AddNewCardActivity : Activity
     {
         private readonly CardManager _cardManager;

@@ -25,10 +25,16 @@ namespace SimpleLangCard.Core.Cards
 
         public Card NextCard()
         {
+            if (!HasCards())
+            {
+                return null;
+            }
+
             if (!_cardEnumerator.MoveNext())
             {
                 // do not use Reset. Can be cause of Not Supported Exception
                 _cardEnumerator = _cards.GetEnumerator();
+
                 return NextCard();
             }
 

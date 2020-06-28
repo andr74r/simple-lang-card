@@ -59,9 +59,9 @@ namespace SimpleLangCard
 
         private void SetCard(Card card)
         {
-            OriginalTextView.Text = card.Original;
+            OriginalTextView.Text = card?.Original;
 
-            TranslationTextView.Text = card.Translation;
+            TranslationTextView.Text = card?.Translation;
         }
 
         private void AddCard()
