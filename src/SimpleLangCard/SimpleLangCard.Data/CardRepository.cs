@@ -36,6 +36,11 @@ namespace SimpleLangCard.Data
             }
         }
 
+        public void DeleteCard(int id)
+        {
+            _database.Delete<CardEntity>(id);
+        }
+
         private static string GetDatabasePath()
         {
             return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), DbName);

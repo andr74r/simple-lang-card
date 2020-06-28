@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Views;
@@ -35,12 +36,14 @@ namespace SimpleLangCard
                 _cardPool.Shuffle();
 
                 SetCard(_cardPool.NextCard());
-
-                ShowButton.Click += (obj, e) => ShowTranslation();
-                NextButton.Click += (obj, e) => NextCard();
             }
-        }
 
+            ShowButton.Click += (obj, e) => ShowTranslation();
+            NextButton.Click += (obj, e) => NextCard();
+
+            AddButton.Click += (obj, e) => AddCard();
+            DeleteButton.Click += (obj, e) => DeleteCard();
+        }
 
         private void ShowTranslation()
         {
@@ -59,6 +62,28 @@ namespace SimpleLangCard
             OriginalTextView.Text = card.Original;
 
             TranslationTextView.Text = card.Translation;
+        }
+
+        private void AddCard()
+        {
+            StartActivity(new Intent(this, typeof(AddNewCardActivity)));
+        }
+
+        private void DeleteCard()
+        {
+            if (_cardPool.HasCards())
+            {
+                _cardManager.DeleteCard(_cardPool.Current);
+
+                _cardPool = _cardManager.GetCardPool();
+
+                _cardPool.Shuffle();
+
+                if (_cardPool.HasCards())
+                {
+                    SetCard(_cardPool.NextCard());
+                }
+            }
         }
 
         private TextView TranslationTextView
@@ -90,6 +115,22 @@ namespace SimpleLangCard
             get
             {
                 return FindViewById<Button>(Resource.Id.nextButton);
+            }
+        }
+
+        private Button AddButton
+        {
+            get
+            {
+                return FindViewById<Button>(Resource.Id.addButton);
+            }
+        }
+
+        private Button DeleteButton
+        {
+            get
+            {
+                return FindViewById<Button>(Resource.Id.deleteButton);
             }
         }
     }

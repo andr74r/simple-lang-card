@@ -22,16 +22,20 @@ namespace SimpleLangCard.Core.Cards
             return cardPool;
         }
 
-        public Card SaveCard(Card card)
+        public Card Add(string original, string translation)
         {
             var id = _cardRepository.SaveCard(new CardEntity
             {
-                Id = card.Id,
-                Original = card.Original,
-                Translation = card.Translation
+                Original = original,
+                Translation = translation
             });
 
-            return new Card(id, card.Original, card.Translation);
+            return new Card(id, original, translation);
+        }
+
+        public void DeleteCard(Card card)
+        {
+            _cardRepository.DeleteCard(card.Id);
         }
     }
 }

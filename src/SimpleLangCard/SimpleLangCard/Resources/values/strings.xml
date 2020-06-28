@@ -3,4 +3,9 @@
   <string name="action_settings">Settings</string>
   <string name="show_button">Show</string>
   <string name="next_button">Next</string>
+  <string name="add_button">Add New Card</string>
+  <string name="delete_button">Delete Card</string>
+  <string name="back_button">Back</string>
+  <string name="new_original_hint">Original</string>
+  <string name="new_translate_hint">Translate</string>
 </resources>

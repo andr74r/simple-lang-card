@@ -39,5 +39,13 @@ namespace SimpleLangCard.Core.Cards
         {
             return _cards.Any();
         }
+
+        public Card Current
+        {
+            get
+            {
+                return _cardEnumerator.Current;
+            }
+        }
     }
 }

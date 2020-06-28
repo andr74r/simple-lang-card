@@ -7,5 +7,7 @@ namespace SimpleLangCard.Data
         IEnumerable<CardEntity> GetCards();
 
         int SaveCard(CardEntity cardEntity);
+
+        void DeleteCard(int id);
     }
 }
